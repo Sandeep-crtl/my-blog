@@ -1,0 +1,741 @@
+/* style.css */
+
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap');
+
+/* --- CSS Variables for Easy Theming --- */
+:root {
+    --primary-color: #007BFF;
+    --secondary-color: #6c757d;
+    --background-color: #f8f9fa;
+    --surface-color: #ffffff;
+    --text-color: #343a40;
+    --heading-color: #212529;
+    --border-color: #dee2e6;
+    --font-primary: 'Roboto', sans-serif;
+    --font-secondary: 'Montserrat', sans-serif;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* --- General & Body Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-secondary);
+    color: var(--heading-color);
+    margin-bottom: 1rem;
+}
+
+section {
+    padding: 60px 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* --- Navbar --- */
+.navbar {
+    background-color: var(--surface-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--heading-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Home Section --- */
+.home-section {
+    position: relative;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 0;
+}
+
+.home-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.home-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: -1;
+}
+
+.home-content h1 {
+    font-size: 3rem;
+    color: white;
+  font-weight: bold;
+}
+
+
+
+.home-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* --- Buttons --- */
+.btn-primary, .btn-secondary, .btn-disabled {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-weight: 700;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: black;
+    color: white;
+    border-radius: 28px;
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    border: 2px solid black;
+}
+
+/* For hero section button hover */
+.home-content .btn-primary:hover {
+    background-color: transparent;
+    
+    border: 2px solid black;
+}
+
+
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-disabled {
+    background-color: #ccc;
+    color: #666;
+    border: 2px solid #ccc;
+    cursor: not-allowed;
+}
+
+/* --- Blogs Section --- */
+.blogs-section {
+    background-color: var(--color-background);
+    padding: 60px 20px; /* Provides vertical and horizontal space */
+    text-align: center;
+}
+
+.blogs-section h2 {
+    font-family: var(--font-family-heading);
+    font-size: 2.5rem;
+    color: var(--color-heading);
+    margin-bottom: 2.5rem; /* Space below the main title */
+}
+
+/* --- Responsive Blog Post Grid --- */
+.blog-list {
+    display: grid;
+    /* Creates a responsive grid that fits as many 350px columns as possible.
+      On smaller screens, it automatically wraps to a single column.
+    */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem; /* UPDATED: Increased space between the blog post boxes */
+    max-width: 1200px;
+    margin: 0 auto; /* Centers the grid container */
+    text-align: left; /* Resets text alignment for card content */
+}
+
+/* --- Blog Post Card Styling --- */
+.post-card {
+    font-family: var(--font-family-sans);
+    background-color: var(--color-surface);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    overflow: hidden; /* Ensures the image corners respect the border-radius */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-5px); /* Lifts the card on hover */
+    box-shadow: var(--shadow-lg);
+}
+
+/* --- Post Image --- */
+.post-img {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Modern way to maintain aspect ratio */
+    object-fit: cover; /* Prevents the image from being distorted */
+}
+
+/* --- Post Content Wrapper --- */
+.post-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allows the content to fill the remaining space */
+}
+
+/* --- Category Badge --- */
+.post-category {
+    display: inline-block;
+    align-self: flex-start; /* Aligns the badge to the left */
+    background-color: var(--color-primary);
+    color: #080808;
+    padding: 5px 12px;
+    border-radius: 50px; /* Creates a pill shape */
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+/* --- Post Title --- */
+.post-title {
+    font-size: 1.5rem;
+    color: var(--color-heading);
+    margin: 0 0 0.5rem 0;
+}
+
+.post-title a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.post-title a:hover {
+    color: var(--color-primary);
+}
+
+/* --- Post Metadata (Date, etc.) --- */
+.post-meta {
+    font-size: 0.85rem;
+    color: var(--color-meta-text);
+    margin: 0 0 1rem 0;
+}
+
+/* --- Post Description --- */
+.post-desc {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-body-text);
+    margin: 0 0 1.5rem 0;
+    flex-grow: 1; /* Pushes the "Read More" button to the bottom */
+}
+
+/* --- "Read More" Button --- */
+.btn-readmore {
+    display: inline-block;
+    align-self: flex-start; /* Aligns button to the left */
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 1px solid black;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-readmore:hover {
+    background-color: black;
+    color: #fff;
+}
+
+
+
+
+
+
+
+/* --- Categories Section --- */
+.categories-section {
+   
+    text-align: center;
+}
+
+.categories {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 2rem;
+}
+
+.category-card {
+    background-color: var(--surface-color);
+    color: #080808;
+    padding: 15px 30px;
+    border-radius: 25px;
+    box-shadow: var(--box-shadow);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.category-card:hover {
+    background-color: black;
+    color: white;
+    transform: scale(1.05);
+}
+
+
+.category-card.add-blog {
+    background: #ffffff;   /* Sky blue */
+    color: rgb(0, 0, 0);
+    
+}
+
+.category-card.add-blog:hover {
+    background: #000000;
+    color: #ffffff;
+
+}
+
+
+
+/* --- About Section --- */
+.about-section {
+
+    background-color: var(--color-surface); /* A clean, bright background */
+    text-align: center;
+}
+
+.about-section h2 {
+    font-family: var(--font-family-heading);
+    font-size: 2.5rem;
+    color: var(--color-heading);
+    margin-bottom: 3rem; /* Creates significant space below the main title */
+}
+
+/* --- Content Layout (Image + Text) --- */
+.about-content {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    gap: 3rem; 
+    max-width: 900px; 
+    margin: 0 auto; 
+    text-align: left; 
+}
+
+/* --- Image Styling --- */
+.about-content .author-img {
+    width: 350px;
+    height: 250px;
+    border-radius: var(--border-radius-circle); /* Makes the image perfectly round */
+    object-fit: cover; /* Ensures the image fills the space without distortion */
+    box-shadow: var(--shadow-md);
+    flex-shrink: 0; /* Prevents the image from shrinking if the text is long */
+}
+
+/* --- Paragraph and Text Styling --- */
+.about-content p {
+    font-family: var(--font-family-body);
+    font-size: 1.1rem; /* Slightly larger font for better readability */
+    line-height: 1.8; /* Generous line spacing */
+    color: var(--color-body-text);
+}
+
+.about-content p strong {
+    color: var(--color-primary); /* Highlights key text with the primary theme color */
+    font-weight: 600;
+}
+
+/* --- Responsive Adjustments for Mobile and Tablets --- */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column; /* Stacks the image on top of the text */
+        text-align: center; /* Centers the paragraph text on smaller screens */
+        gap: 2rem; /* Reduces the gap for a tighter vertical layout */
+    }
+
+    .about-section h2 {
+        font-size: 2rem; /* Reduces heading size for mobile */
+    }
+
+    .about-content p {
+        font-size: 1rem; /* Adjusts paragraph font size for mobile */
+    }
+
+    .about-content .author-img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+
+
+/* Feedback Section */
+.feedback-section {
+    margin-top: -120px;
+    padding: 4rem 2rem;
+    background-color: #F8F9FA;
+    text-align: center;
+}
+
+.feedback-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 2rem auto 0;
+}
+
+.feedback-card {
+    background: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    flex: 1 1 300px; /* Allows cards to grow and shrink */
+    max-width: 380px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.feedback-card cite {
+    font-style: normal;
+    font-weight: bold;
+    color: #333;
+}
+
+.feedback-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    margin-top: auto; /* Pushes footer to the bottom of the card */
+}
+
+.feedback-avatar {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.feedback-card p {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 1rem;
+    flex-grow: 1; /* Ensures cards have the same height */
+}
+
+.feedback-card cite {
+    font-style: normal;
+    font-weight: bold;
+    color: #333;
+    text-align: right;
+}
+
+
+
+.contact-section {
+  
+    background-color: #f8f9fa;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.contact-section p {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 550px;
+    margin: 0 auto 2.5rem auto; /* Centers the text and adds space below */
+    line-height: 1.6;
+}
+
+/* --- Form Container --- */
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem; /* Creates consistent spacing between form elements */
+}
+
+/* --- Input Fields and Text Area Styling --- */
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Enhances usability by providing a clear visual cue on focus */
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    font-family: 'poppins';
+    outline: none;
+    border-color: #000000;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.contact-form textarea {
+    min-height: 140px;
+    resize: vertical; /* Allows the user to resize the message box vertically */
+}
+
+/* --- Submit Button Styling --- */
+
+.contact-form .btn-primary {
+    padding: 14px 28px;
+    width: 100%;;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #000000;
+    border: none;
+    border-radius: 28px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    align-self: center; /* Centers the button in the form */
+}
+
+.contact-form .btn-primary:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+    transform: translateY(-2px); /* Adds a subtle lift effect on hover */
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .contact-section h2 {
+        font-size: 2rem;
+    }
+
+    .contact-section p {
+        font-size: 1rem;
+    }
+}
+
+
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--heading-color);
+    color: #f8f9fa;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-links a, .social-links a {
+    color: #f8f9fa;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover, .social-links a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Simple hiding for mobile, can be replaced with a hamburger menu */
+    }
+
+    .home-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .home-content p {
+        font-size: 1rem;
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+}
+
+
+
+/* post css */
+
+/* Post Page Layout */
+/* Post Page Layout */
+.post-page {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+.post-detail {
+  display: flex;
+  gap: 30px;
+  max-width: 1200px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+/* Left side image */
+.post-detail-img {
+  flex: 1;
+  max-width: 50%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Right side content (text in column) */
+.post-detail-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* text stacked vertically */
+  justify-content: flex-start;
+}
+
+.post-detail-content h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #1e293b;
+}
+
+.post-detail-content .post-meta,
+.post-detail-content .post-category {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+
+.post-detail-content .post-body {
+  margin-top: 10px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #334155;
+}
+
+.post-detail-content .btn-primary {
+  display: inline-block;
+  border: 2px solid #000000;
+  margin-top: 20px;
+  padding: 10px 18px;
+  background: #ffffff;
+  color: #000000;
+  text-decoration: none;
+  border-radius: 28px;
+  transition: background 0.3s;
+}
+
+.post-detail-content .btn-primary:hover {
+  background: #090909;
+  color: #ffffff;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  .post-detail {
+    flex-direction: column;
+  }
+  .post-detail-img {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+

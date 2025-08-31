@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Category</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="blogs.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Amatic+SC:wght@400;700&family=Arizonia&family=Beau+Rivage&family=Berkshire+Swash&family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Comfortaa:wght@300..700&family=Creepster&family=Dancing+Script:wght@400..700&family=Dawning+of+a+New+Day&family=Ephesis&family=Gloria+Hallelujah&family=Gravitas+One&family=Great+Vibes&family=Grenze+Gotisch:wght@100..900&family=Homemade+Apple&family=Hurricane&family=IM+Fell+DW+Pica:ital@0;1&family=Italianno&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Julius+Sans+One&family=Kaushan+Script&family=Kristi&family=Lexend+Deca:wght@100..900&family=Libre+Barcode+39&family=Manufacturing+Consent&family=Marck+Script&family=Merienda:wght@300..900&family=Monsieur+La+Doulaise&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mr+De+Haviland&family=Mrs+Saint+Delafield&family=Oleo+Script:wght@400;700&family=Outfit:wght@100..900&family=Parisienne&family=Patrick+Hand&family=Permanent+Marker&family=Pinyon+Script&family=Playball&family=Playwrite+AU+QLD:wght@100..400&family=Poiret+One&family=Qwigley&family=Rock+Salt&family=Rouge+Script&family=Rye&family=Sacramento&family=Satisfy&family=Smooch+Sans:wght@100..900&family=Sora:wght@100..800&family=Special+Elite&family=Syncopate:wght@400;700&family=Tangerine:wght@400;700&family=Unbounded:wght@200..900&family=VT323&family=Whisper&family=WindSong:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html#home" class="logo"
+                style="font-family: 'Italianno';font-weight: 600; font-size:xx-large;">My Awesome Blog</a>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#blogs">Blogs</a></li>
+                <li><a href="index.html#categories">Categories</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Blogs by Category -->
+    <section class="blogs-section">
+        <h2 id="category-title"></h2>
+        <div id="category-blog-container" class="blog-list"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 My Awesome Blog | Made with ❤️ by Nayak</p>
+            <div class="footer-links">
+                <a href="index.html#home">Home</a> |
+                <a href="index.html#blogs">Blogs</a> |
+                <a href="index.html#categories">Categories</a> |
+                <a href="index.html#about">About</a> |
+                <a href="index.html#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Get category from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get("category");
+
+        // Set heading
+        document.getElementById("category-title").innerText = category + " Blogs";
+
+        // Container
+        const container = document.getElementById("category-blog-container");
+
+        // Filter blogs by category
+        const filteredBlogs = blogs.filter(blog => blog.category === category);
+
+        if (filteredBlogs.length === 0) {
+            container.innerHTML = "<p>No blogs found in this category.</p>";
+        } else {
+            filteredBlogs.forEach(blog => {
+                const article = document.createElement("article");
+                article.classList.add("post-card");
+
+                article.innerHTML = `
+          <img src="${blog.image}" alt="Blog Post Image" class="post-img">
+          <div class="post-content">
+            <span class="post-category">${blog.category}</span>
+            <h3 class="post-title">
+              <a href="post.html?id=${blog.id}">${blog.title}</a>
+            </h3>
+            <p class="post-meta">
+              Published on <time datetime="${blog.date}">${blog.displayDate}</time>
+            </p>
+            <p class="post-desc">${blog.description}</p>
+            <a href="post.html?id=${blog.id}" class="btn-readmore">Read More</a>
+          </div>
+        `;
+                container.appendChild(article);
+            });
+        }
+    </script>
+</body>
+
+</html>

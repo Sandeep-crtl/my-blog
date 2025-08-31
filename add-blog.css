@@ -1,0 +1,51 @@
+   
+/* Add Blog Form Section */
+.add-blog-section {
+    font-family: 'poppins';
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.add-blog-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.blog-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.blog-form label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: -0.5rem;
+}
+
+.blog-form input,
+.blog-form select,
+.blog-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.blog-form button.btn-primary {
+    background-color: #0056b3;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+}

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="My Awesome Blog - Tutorials, stories, and insights on tech, design, and life.">
+    <meta name="author" content="Nayak">
+    <meta name="keywords" content="Blog, Tech, Tutorials, Lifestyle, Programming, Design">
+    <title>My Awesome Blog</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Add Font Awesome CDN in <head> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Amatic+SC:wght@400;700&family=Arizonia&family=Beau+Rivage&family=Berkshire+Swash&family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Comfortaa:wght@300..700&family=Creepster&family=Dancing+Script:wght@400..700&family=Dawning+of+a+New+Day&family=Ephesis&family=Gloria+Hallelujah&family=Gravitas+One&family=Great+Vibes&family=Grenze+Gotisch:wght@100..900&family=Homemade+Apple&family=Hurricane&family=IM+Fell+DW+Pica:ital@0;1&family=Italianno&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Julius+Sans+One&family=Kaushan+Script&family=Kristi&family=Lexend+Deca:wght@100..900&family=Libre+Barcode+39&family=Manufacturing+Consent&family=Marck+Script&family=Merienda:wght@300..900&family=Monsieur+La+Doulaise&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mr+De+Haviland&family=Mrs+Saint+Delafield&family=Oleo+Script:wght@400;700&family=Outfit:wght@100..900&family=Parisienne&family=Patrick+Hand&family=Permanent+Marker&family=Pinyon+Script&family=Playball&family=Playwrite+AU+QLD:wght@100..400&family=Poiret+One&family=Qwigley&family=Rock+Salt&family=Rouge+Script&family=Rye&family=Sacramento&family=Satisfy&family=Smooch+Sans:wght@100..900&family=Sora:wght@100..800&family=Special+Elite&family=Syncopate:wght@400;700&family=Tangerine:wght@400;700&family=Unbounded:wght@200..900&family=VT323&family=Whisper&family=WindSong:wght@400;500&display=swap"
+        rel="stylesheet">
+    <script src="blogs.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#home" class="logo" style="font-family: 'Italianno';font-weight: 600; font-size:xx-large;">My
+                Awesome Blog</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#blogs">Blogs</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#feedback">Feedback</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="home-section">
+        <img src="images/Homepage.jpg" alt="Blog Banner" class="home-img">
+        <div class="home-content">
+            <h1 style="font-family: 'Bodoni Moda';">Welcome to My Awesome Blog</h1>
+            <p style="font-family: 'Poiret One'; font-weight: 500; font-size: x-large;">Sharing tutorials, stories, and
+                insights on
+                <strong>Tech, Design, and
+                    Life</strong>.
+                Stay inspired and keep learning with me.
+            </p>
+            <a href="#blogs" class="btn-primary">Explore Blogs</a>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="categories-section">
+        <h2>Popular Categories</h2>
+        <div class="categories">
+            <a href="category.html?category=Technology" class="category-card">💻 Technology</a>
+            <a href="category.html?category=Programming" class="category-card">👨‍💻 Programming</a>
+            <a href="category.html?category=Design" class="category-card">🎨 Design</a>
+            <a href="category.html?category=Lifestyle" class="category-card">🌍 Lifestyle</a>
+            <a href="category.html?category=Travel" class="category-card">✈️ Travel</a>
+            <a href="category.html?category=Food" class="category-card">🍔 Food</a>
+            <a href="add-blog.html" class="category-card add-blog">➕ Add Blog</a>
+        </div>
+
+
+    </section>
+
+
+    <!-- Blogs Section -->
+    <section id="blogs" class="blogs-section">
+        <h2>Latest Blogs</h2>
+        <div id="blog-container" class="blog-list"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <h2>About My Blog</h2>
+        <div class="about-content">
+            <img src="./images/Blog-About.jpg" alt="Blog" class="author-img">
+            <p>Welcome to <strong>My Awesome Blog</strong> — a space where I share tutorials, insights, and stories
+                about <strong>technology, design, and lifestyle</strong>. This blog is dedicated to helping readers
+                learn, stay inspired, and explore new ideas in a creative and engaging way.<br />
+
+                I started this blog out of a passion for demystifying complex topics. With a
+                background in software engineering and a love for clean design.
+        </div>
+    </section>
+
+    <!-- Feedback Section -->
+    <section id="feedback" class="feedback-section">
+
+        <div class="feedback-container">
+            <div class="feedback-card">
+                <p>"This is the best blog I've ever read! The tutorials are so clear and helpful."</p>
+                <div class="feedback-footer">
+                    <img src="./images/Mentor-Teacher4.jpg" alt="A Happy Reader" class="feedback-avatar">
+                    <cite>-Natasha, A Happy Reader</cite>
+                </div>
+            </div>
+            <div class="feedback-card">
+                <p>"I learned so much about web design from the articles here. Highly recommended!"</p>
+                <div class="feedback-footer">
+                    <img src="./images/Mentor-Teacher1.jpg" alt="Jane Doe" class="feedback-avatar">
+                    <cite>- Jane Doe, Web Developer</cite>
+                </div>
+            </div>
+            <div class="feedback-card">
+                <p>"A fantastic resource for anyone in the tech industry. Keep up the great work!"</p>
+                <div class="feedback-footer">
+                    <img src="./images/Mentor-Teacher3.jpg" alt="John Smith" class="feedback-avatar">
+                    <cite>- John Smith, Tech Enthusiast</cite>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Get in Touch</h2>
+        <p>If you’d like to collaborate, ask questions, or just say hello — feel free to reach out!</p>
+        <form class="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 My Awesome Blog | Made with <i class="fa-solid fa-heart"></i> by <strong>Nayak</strong></p>
+
+            <div class="footer-links">
+                <a href="#home"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="#blogs"><i class="fa-solid fa-blog"></i> Blogs</a>
+                <a href="#categories"><i class="fa-solid fa-th-large"></i> Categories</a>
+                <a href="#about"><i class="fa-solid fa-user"></i> About</a>
+                <a href="#feedback"><i class="fa-solid fa-comments"></i> Feedback</a>
+                <a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+            </div>
+
+            <div class="social-links">
+                <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/" target="_blank"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Script to render blogs -->
+    <script>
+        const container = document.getElementById("blog-container");
+
+        let blogList = blogs && blogs.length > 0 ? blogs : defaultBlogs;
+
+        if (blogList.length === 0) {
+            container.innerHTML = "<p>No blogs yet. Be the first to add one!</p>";
+        } else {
+            blogList.forEach(blog => {
+                const article = document.createElement("article");
+                article.classList.add("post-card");
+
+                article.innerHTML = `
+                <img src="${blog.image}" alt="Blog Post Image" class="post-img">
+                <div class="post-content">
+                  <span class="post-category">${blog.category}</span>
+                  <h3 class="post-title">
+                    <a href="post.html?id=${blog.id}">${blog.title}</a>
+                  </h3>
+                  <p class="post-meta">
+                    Published on <time datetime="${blog.date}">${blog.displayDate}</time>
+                  </p>
+                  <p class="post-desc">${blog.description}</p>
+                  <a href="post.html?id=${blog.id}" class="btn-readmore">Read More</a>
+                </div>
+            `;
+                container.appendChild(article);
+            });
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>
